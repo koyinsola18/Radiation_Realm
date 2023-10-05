@@ -1807,7 +1807,7 @@ GameObject:
   - component: {fileID: 267360732}
   - component: {fileID: 267360731}
   m_Layer: 0
-  m_Name: Backgroud audio
+  m_Name: Backgroud Audio
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
