@@ -36,4 +36,10 @@ public class ItemHandler : MonoBehaviour
         }
         
     }
+
+    public void ClosePuzzleCanvas()
+    {
+        puzzleCanvas.SetActive(false);
+        item++;
+    }
 }
