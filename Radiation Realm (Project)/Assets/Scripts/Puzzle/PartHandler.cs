@@ -8,11 +8,15 @@ public class PartHandler: MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
     private RectTransform rectTrans;
     public Canvas myCanvas;
     private CanvasGroup canvasGroup;
+    public int id;
+    private Vector2 initPos;
+
 
     void Start()
     {
         rectTrans = GetComponent<RectTransform>();
         canvasGroup = GetComponent<CanvasGroup>();
+	initPos = transform.position;
     }
 
     public void OnBeginDrag(PointerEventData eventData)
@@ -37,4 +41,10 @@ public class PartHandler: MonoBehaviour, IPointerDownHandler, IBeginDragHandler,
     {
         Debug.Log("CLICK");
     }
+
+    public void ResetPosition()
+    {
+        transform.position = initPos;
+    }
+
 }
