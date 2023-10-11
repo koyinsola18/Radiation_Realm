@@ -11,17 +11,14 @@ public class RadiationLevel : MonoBehaviour
 
     public float radiationLevelMultiplier = 2f; // How fast the bar will go up
 
-    float radiationLevel, maxLevel = 100f;
+    float radiationLevel, maxLevel = 100.00f;
     float lerpSpeed;
-
-
 
 
 
     void Start()
     {
-        radiationLevel = maxLevel;
-        
+        radiationLevel = 0f;
     }
 
     // Update is called once per frame
@@ -31,7 +28,7 @@ public class RadiationLevel : MonoBehaviour
 
         if(radiationLevel <= maxLevel)
         {
-            radiationLevel -= radiationLevelMultiplier * Time.deltaTime;
+            radiationLevel += radiationLevelMultiplier * Time.deltaTime;
         }
         
 
@@ -46,7 +43,7 @@ public class RadiationLevel : MonoBehaviour
 
     void ColorChanger()
     {
-        Color radiationBarColor = Color.Lerp(Color.red, Color.green, (radiationLevel / maxLevel));
+        Color radiationBarColor = Color.Lerp(Color.green, Color.red, (radiationLevel / maxLevel));
         RadiationBar.color = radiationBarColor;
     }
 }

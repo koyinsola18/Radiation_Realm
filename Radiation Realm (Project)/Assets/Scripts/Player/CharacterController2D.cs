@@ -33,6 +33,11 @@ public class CharacterController2D : MonoBehaviour
 
     bool isGravityInverted = false;
 
+    // Sound Effects
+
+    [SerializeField] AudioSource audioSource;
+    [SerializeField] AudioClip[] audioClips;
+
 
     private void Start()
     {
@@ -182,5 +187,14 @@ public class CharacterController2D : MonoBehaviour
         {
             isGrounded = false;
         }
+    }
+
+    public void PlayRunningSFXOne()
+    {
+        audioSource.PlayOneShot(audioClips[0]);
+    }
+    public void PlayRunningSFXTwo()
+    {
+        audioSource.PlayOneShot(audioClips[1]);
     }
 }
