@@ -6,6 +6,8 @@ using TMPro;
 
 public class RadiationLevel : MonoBehaviour
 {
+    public DeathManager deathManager;
+
     public TextMeshProUGUI radiationLevelText;
     public Image RadiationBar;
 
@@ -13,6 +15,9 @@ public class RadiationLevel : MonoBehaviour
 
     float radiationLevel, maxLevel = 100.00f;
     float lerpSpeed;
+
+    public GameObject bar;
+    public GameObject barText;
 
 
 
@@ -30,7 +35,13 @@ public class RadiationLevel : MonoBehaviour
         {
             radiationLevel += radiationLevelMultiplier * Time.deltaTime;
         }
-        
+        else
+        {
+            deathManager.Die();
+            bar.SetActive(false);
+            barText.SetActive(false);
+        }
+
 
         RadiationBar.fillAmount = radiationLevel/ maxLevel;
         RadiationBar.fillAmount = Mathf.Lerp(RadiationBar.fillAmount, radiationLevel / maxLevel, lerpSpeed);
