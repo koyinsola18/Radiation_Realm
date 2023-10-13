@@ -57,4 +57,20 @@ public class RadiationLevel : MonoBehaviour
         Color radiationBarColor = Color.Lerp(Color.green, Color.red, (radiationLevel / maxLevel));
         RadiationBar.color = radiationBarColor;
     }
+
+    public void RadiationDamage(float damageAmount)
+    {
+        if(radiationLevel < 100f)
+        {
+            radiationLevel += damageAmount;
+        }
+    }
+
+    public void RadiationHeal(float damageAmount)
+    {
+        if (radiationLevel < 100f && radiationLevel > 0f)
+        {
+            radiationLevel -= damageAmount;
+        }
+    }
 }

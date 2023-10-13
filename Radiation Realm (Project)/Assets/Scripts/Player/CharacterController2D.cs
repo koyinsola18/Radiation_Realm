@@ -5,38 +5,51 @@ using UnityEngine.PlayerLoop;
 
 public class CharacterController2D : MonoBehaviour
 {
+    [Header("Object Reference")]
+    public Camera mainCamera;  // Reference to the main camera
+    public Animator myAnim;
+    private Vector2 mousePositionRelativeToPlayer;  // To store the mouse position relative to the player
+    private Rigidbody2D rb;
+
+    [Header("Vertical Movement")]
     public float moveSpeed = 5f;        // Character movement speed
     public float walkSpeed = 2.5f;
+    float movementInput;
+
+    [Header("Horizontal Movement")]
     public float jumpForce = 10f;       // Jump force
     public int extraJump = 1;
     public float extraJumpTime = 0.2f;
-    public LayerMask groundLayer;       // LayerMask to specify which objects are considered ground
-
-    public Camera mainCamera;  // Reference to the main camera
-    private Vector2 mousePositionRelativeToPlayer;  // To store the mouse position relative to the player
-
-    public Animator myAnim;
-
     public float customGravity;
-
-
-    public Transform feet;
-
-    private Rigidbody2D rb;
-
     int jumpCount = 0;
-    bool isGrounded;            // Flag to check if the character is grounded
     float jumpCooldown;
-
-
-    float movementInput;
-
     bool isGravityInverted = false;
 
-    // Sound Effects
+
+    [Header("Ground Check")]
+    public LayerMask groundLayer;       // LayerMask to specify which objects are considered ground
+    public Transform feet;
+    bool isGrounded;            // Flag to check if the character is grounded
+
+
+
+    [Header("Sound")]
 
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip[] audioClips;
+
+    [Header("Wall Jump")]
+    public float wallJumpTime = 0.2f;
+    public float wallSlideSpeed = 0.3f;
+    public float wallDistance = 0.5f;
+    bool isWallSliding = false;
+    RaycastHit2D wallCheckHit;
+    float jumpTime;
+
+
+    bool isFacingRight = true;
+
+
 
 
     private void Start()
@@ -47,7 +60,7 @@ public class CharacterController2D : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Jump"))
+        if (Input.GetButtonDown("Jump") || isWallSliding && Input.GetButtonDown("Jump"))
         {
             Jump();
         }
@@ -125,10 +138,12 @@ public class CharacterController2D : MonoBehaviour
             if (mousePositionRelativeToPlayer.x < 0)
             {
                 transform.localScale = new Vector3(-1f, 1f, 1f);
+                isFacingRight = false;
             }
             else
             {
                 transform.localScale = new Vector3(1f, 1f, 1f);
+                isFacingRight = true;
             }
         }
 
@@ -136,13 +151,47 @@ public class CharacterController2D : MonoBehaviour
         if (movementInput < 0)
         {
             transform.localScale = new Vector3(-1f, transform.localScale.y, 1f);
+            isFacingRight = false;
         }
         else if (movementInput > 0) // Flip back if moving right (positive input)
         {
             transform.localScale = new Vector3(1f, transform.localScale.y, 1f);
+            isFacingRight = true;
         }
 
         rb.velocity = new Vector2(movementInput * moveSpeed * Time.deltaTime, rb.velocity.y);
+
+        /*
+        // Wall Jump
+        if (isFacingRight)
+        {
+            wallCheckHit = Physics2D.Raycast(transform.position, new Vector2(wallDistance, 0), wallDistance, groundLayer);
+            Debug.DrawRay(transform.position, new Vector2(wallDistance, 0), Color.blue);
+        }
+        else
+        {
+            wallCheckHit = Physics2D.Raycast(transform.position, new Vector2(-wallDistance, 0), wallDistance, groundLayer);
+            Debug.DrawRay(transform.position, new Vector2(-wallDistance, 0), Color.blue);
+        }
+
+        if(wallCheckHit && !isGrounded && movementInput != 0)
+        {
+            isWallSliding = true;
+            jumpTime = Time.time + wallJumpTime;
+        }
+        else if(jumpTime < Time.time)
+        {
+            isWallSliding = false;
+        }
+
+        if (isWallSliding)
+        {
+            rb.velocity = new Vector2(rb.velocity.x, Mathf.Clamp(rb.velocity.y, wallSlideSpeed, float.MinValue));
+        }
+        */
+
+
+
 
     }
 
