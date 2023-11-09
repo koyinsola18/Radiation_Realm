@@ -1812,7 +1812,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   sceneNames:
-  - Level_1
+  - Crash_site
   loadingScreen: {fileID: 986417802}
 --- !u!4 &1284956950
 Transform:

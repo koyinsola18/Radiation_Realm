@@ -26,4 +26,7 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Sewer.unity
     guid: 5438bdf911c8c4b8db0862d676f406fc
+  - enabled: 1
+    path: Assets/Scenes/Base.unity
+    guid: 2a6c80d9bafdac7428ae958f448b706c
   m_configObjects: {}
