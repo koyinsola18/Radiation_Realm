@@ -7,7 +7,7 @@ public class GunControllerTwo : MonoBehaviour
 
     private GameObject hoveredObject; // The object currently hovered by the mouse
 
-    private void Update()
+    private void FixedUpdate()
     {
         // Check for mouse hover
         RaycastHit2D hit = Physics2D.Raycast(Camera.main.ScreenToWorldPoint(Input.mousePosition), Vector2.zero);
@@ -37,7 +37,7 @@ public class GunControllerTwo : MonoBehaviour
             // Determine the force based on the mouse button being pressed
             float appliedForce = Input.GetMouseButton(1) ? force : -force;
 
-            attractedObject.ApplyForce(appliedForce * forceDirection);
+            attractedObject.ApplyForce(appliedForce * forceDirection * Time.deltaTime);
         }
     }
 }
