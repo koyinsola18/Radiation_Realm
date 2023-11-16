@@ -13,6 +13,8 @@ public class CodeInputManager : MonoBehaviour
 
     public LightHandler lightHandler;
 
+    public GameObject objectToDeactive;
+
     void Start()
     {
         inputText.text = "Enter the Code: " + correctCode;
@@ -47,7 +49,8 @@ public class CodeInputManager : MonoBehaviour
         {
             // Code is correct, you can add your success logic here
             Debug.Log("Code is correct!");
-            lightHandler.PuzzleComplete();
+            //lightHandler.PuzzleComplete();
+            gameObject.SetActive(false);
         }
         else
         {

@@ -15,6 +15,7 @@ public class CharacterController2D : MonoBehaviour
     public float moveSpeed = 5f;        // Character movement speed
     public float walkSpeed = 2.5f;
     float movementInput;
+    public bool canUseBoot = false;
 
     [Header("Horizontal Movement")]
     public float jumpForce = 10f;       // Jump force
@@ -64,7 +65,7 @@ public class CharacterController2D : MonoBehaviour
 
         CheckGrounded();
 
-        if (Input.GetKeyDown(KeyCode.G))
+        if (Input.GetKeyDown(KeyCode.G) && canUseBoot)
         {
             isGravityInverted = !isGravityInverted;
         }
