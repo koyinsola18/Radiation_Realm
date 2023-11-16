@@ -61,10 +61,6 @@ public class CharacterController2D : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetButtonDown("Jump") || isWallSliding && Input.GetButtonDown("Jump"))
-        {
-            Jump();
-        }
 
         CheckGrounded();
 
@@ -77,6 +73,11 @@ public class CharacterController2D : MonoBehaviour
 
     private void FixedUpdate()
     {
+        if (Input.GetButtonDown("Jump") || isWallSliding && Input.GetButtonDown("Jump"))
+        {
+            Jump();
+        }
+
         // Calculate the mouse position relative to the player
         mousePositionRelativeToPlayer = mainCamera.ScreenToWorldPoint(Input.mousePosition) - transform.position;
 
