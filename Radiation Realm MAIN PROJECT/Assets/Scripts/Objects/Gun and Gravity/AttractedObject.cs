@@ -5,25 +5,43 @@ public class AttractedObject : MonoBehaviour
 {
     private Rigidbody2D rb;
     public bool isAttracted = false;
+    public GameObject highlighter;
 
     private void Start()
     {
         rb = GetComponent<Rigidbody2D>();
-        rb.drag = 10;
+        //highlighter.SetActive(false);
+        //rb.drag = 10;
     }
 
     void Update()
     {
-        if (!Input.GetMouseButton(0) && !Input.GetMouseButton(1))
-        {
-            //rb.bodyType = RigidbodyType2D.Static;
-            rb.drag = 10;
-        }
+        
     }
 
     public void ApplyForce(Vector2 force)
     {
         rb.AddForce(force);
-        rb.drag = 5;
+        rb.bodyType = RigidbodyType2D.Dynamic;
+        //rb.drag = 5;
+    }
+
+    void OnMouseOver()
+    {
+        if(highlighter == null)
+        {
+            return;
+        }
+        highlighter.SetActive(true);
+    }
+
+    void OnMouseExit()
+    {
+        if (highlighter == null)
+        {
+            return;
+        }
+        highlighter.SetActive(false);
+
     }
 }

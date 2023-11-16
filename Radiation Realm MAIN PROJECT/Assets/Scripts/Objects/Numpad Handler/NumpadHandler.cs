@@ -8,8 +8,6 @@ public class NumpadHandler : MonoBehaviour
 
     [SerializeField] GameObject popUp;
 
-    public float colorLerpTime = 2f;
-
     bool lightTurned = false;
     private bool isInRange = false;
 

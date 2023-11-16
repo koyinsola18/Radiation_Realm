@@ -51,6 +51,7 @@ public class CodeInputManager : MonoBehaviour
             Debug.Log("Code is correct!");
             //lightHandler.PuzzleComplete();
             gameObject.SetActive(false);
+            objectToDeactive.SetActive(false);
         }
         else
         {
