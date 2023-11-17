@@ -245,10 +245,17 @@ public class CharacterController2D : MonoBehaviour
 
     public void PlayRunningSFXOne()
     {
-        audioSource.PlayOneShot(audioClips[0]);
+        if (isGrounded)
+        {
+            audioSource.PlayOneShot(audioClips[0]);
+        }
+        
     }
     public void PlayRunningSFXTwo()
     {
-        audioSource.PlayOneShot(audioClips[1]);
+        if (isGrounded)
+        {
+            audioSource.PlayOneShot(audioClips[1]);
+        }
     }
 }

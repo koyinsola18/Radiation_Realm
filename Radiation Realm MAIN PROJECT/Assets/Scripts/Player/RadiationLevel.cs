@@ -22,7 +22,10 @@ public class RadiationLevel : MonoBehaviour
 
     public GameObject HurtCanvas;
 
-
+    private void Awake()
+    {
+        DontDestroyOnLoad(gameObject);
+    }
 
     void Start()
     {
@@ -33,7 +36,7 @@ public class RadiationLevel : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        radiationLevelText.text = "Radiation Level: " + radiationLevel.ToString("F2") + "%";
+        radiationLevelText.text = "Radiation: " + radiationLevel.ToString("F2") + "%";
 
         if(radiationLevel <= maxLevel)
         {
