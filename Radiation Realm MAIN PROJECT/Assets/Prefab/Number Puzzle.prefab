@@ -125,7 +125,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inputText: {fileID: 3290368320797581032}
   incorrectInputText: {fileID: 3290368320080407932}
-  correctCode: 1676
+  correctCode: 2354
+  lightHandler: {fileID: 0}
+  objectToDeactive: {fileID: 0}
 --- !u!1 &3290368319270544218
 GameObject:
   m_ObjectHideFlags: 0
@@ -2247,7 +2249,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: 41.4, y: 309}
+  m_AnchoredPosition: {x: 44, y: 309}
   m_SizeDelta: {x: 346.73615, y: 49.999985}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!222 &3290368320797581031

@@ -11,6 +11,12 @@ public class ToxicWater : MonoBehaviour
 
     [SerializeField] AudioSource audioSource;
     [SerializeField] AudioClip splashSound;
+
+
+    void Start()
+    {
+        radiationLevel = FindObjectOfType<RadiationLevel>();
+    }
     void OnTriggerStay2D(Collider2D other)
     {
         if (other.tag == "Player")

@@ -132,7 +132,7 @@ Rigidbody2D:
   m_Material: {fileID: 6200000, guid: 4a19281f481028a4eb3d1dcd7beb8867, type: 2}
   m_Interpolate: 0
   m_SleepingMode: 1
-  m_CollisionDetection: 0
+  m_CollisionDetection: 1
   m_Constraints: 0
 --- !u!114 &3594092203438163273
 MonoBehaviour:
@@ -175,7 +175,7 @@ MonoBehaviour:
   - {x: -0.9449749, y: 1.0260403, z: 0}
   m_ShapePathHash: 668053264
   m_Mesh: {fileID: 0}
-  m_InstanceId: 239294
+  m_InstanceId: -78210
 --- !u!1 &3594092204453214969
 GameObject:
   m_ObjectHideFlags: 0

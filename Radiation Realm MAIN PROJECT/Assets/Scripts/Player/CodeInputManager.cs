@@ -8,7 +8,7 @@ public class CodeInputManager : MonoBehaviour
 {
     public TextMeshProUGUI inputText;
     public GameObject incorrectInputText;
-    public string correctCode = "1234"; // Set your correct code here
+    public string correctCode = ""; // Set your correct code here
     private string currentInput = "";
 
     public LightHandler lightHandler;
@@ -17,7 +17,7 @@ public class CodeInputManager : MonoBehaviour
 
     void Start()
     {
-        inputText.text = "Enter the Code: " + correctCode;
+        inputText.text = "Enter the 4 Digit Code: ";
         incorrectInputText.SetActive(false);
     }
 
