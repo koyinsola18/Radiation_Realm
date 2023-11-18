@@ -21,14 +21,27 @@ public class RadiationLevel : MonoBehaviour
 
 
     public GameObject HurtCanvas;
+    private static RadiationLevel instance;
 
+    /*
     private void Awake()
     {
-        DontDestroyOnLoad(gameObject);
+        if (instance == null)
+        {
+            instance = this;
+
+            DontDestroyOnLoad(gameObject);
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
     }
+    */
 
     void Start()
     {
+        gameObject.SetActive(true);
         radiationLevel = 0f;
         HurtCanvas.SetActive(false);
     }

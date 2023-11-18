@@ -1,5 +1,4 @@
 ﻿using UnityEngine;
-using UnityEngine.PlayerLoop;
 
 public class AttractedObject : MonoBehaviour
 {
@@ -16,16 +15,11 @@ public class AttractedObject : MonoBehaviour
         rb.mass = normalMass;
     }
 
-    void Update()
-    {
-        
-    }
-
     public void ApplyForce(Vector2 force)
     {
         rb.mass = gravityGunMass;
+        print(force);
         rb.AddForce(force);
-        rb.bodyType = RigidbodyType2D.Dynamic;
     }
 
     void OnMouseOver()

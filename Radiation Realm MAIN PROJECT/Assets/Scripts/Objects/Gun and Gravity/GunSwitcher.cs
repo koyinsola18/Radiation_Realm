@@ -3,6 +3,7 @@ using UnityEngine;
 
 public class GunSwitcher : MonoBehaviour
 {
+    public GameObject ObjectToAdd;
     public GameObject[] guns; // Array to hold your gun GameObjects
     private int currentGunIndex = 0;
 
@@ -41,5 +42,10 @@ public class GunSwitcher : MonoBehaviour
             // Toggle on the new gun
             guns[currentGunIndex].SetActive(true);
         }
+    }
+
+    public void AddGunToInventory()
+    {
+        ObjectToAdd.SetActive(true);
     }
 }

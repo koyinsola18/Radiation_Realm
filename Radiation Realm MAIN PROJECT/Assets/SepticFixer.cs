@@ -1,7 +1,6 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
-using UnityEngine.Experimental.Rendering.Universal;
 
 public class SepticFixer : MonoBehaviour
 {
@@ -14,11 +13,6 @@ public class SepticFixer : MonoBehaviour
 
 
     private bool isInRange = false;
-
-    void Start()
-    {
-       
-    }
 
 
     void Update()

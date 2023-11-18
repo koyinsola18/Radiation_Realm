@@ -27,7 +27,7 @@ public class GunSwitcherUI : MonoBehaviour
             guns[currentGunIndex].SetActive(false);
 
             // Calculate the new gun index
-            currentGunIndex += (int)Mathf.Sign(scrollInput);
+            currentGunIndex -= (int)Mathf.Sign(scrollInput);
 
             // Wrap around the index if it goes out of bounds
             if (currentGunIndex < 0)

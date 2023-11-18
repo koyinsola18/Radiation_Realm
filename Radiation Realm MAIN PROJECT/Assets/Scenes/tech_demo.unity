@@ -213,6 +213,8 @@ MonoBehaviour:
   clips:
   - {fileID: 8300000, guid: ec9ac4e2063229349a1ead829e93cd40, type: 3}
   id: 1
+  puzzle_to_be_solved: 3
+  DragandDropPuzzleCanvas: {fileID: 0}
 --- !u!82 &5228912
 AudioSource:
   m_ObjectHideFlags: 0
@@ -2087,10 +2089,12 @@ MonoBehaviour:
   myAnim: {fileID: 242984620}
   moveSpeed: 500
   walkSpeed: 250
+  canUseBoot: 0
   jumpForce: 600
   extraJump: 1
   extraJumpTime: 0.2
   customGravity: 2
+  jumpSound: {fileID: 0}
   groundLayer:
     serializedVersion: 2
     m_Bits: 256
@@ -3170,6 +3174,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be4b12e90c06914bbe11b7ef14b1dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAttracted: 0
+  highlighter: {fileID: 0}
+  normalMass: 250
+  gravityGunMass: 5
 --- !u!50 &339545316
 Rigidbody2D:
   serializedVersion: 4
@@ -32921,6 +32929,7 @@ MonoBehaviour:
   radiationLevelMultiplier: 0.5
   bar: {fileID: 1444763249}
   barText: {fileID: 1095199365}
+  HurtCanvas: {fileID: 0}
 --- !u!114 &578612029
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -33420,6 +33429,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   loadingScreen: {fileID: 1511410501}
   radiationBar: {fileID: 578612027}
+  sceneToLoad: 
 --- !u!61 &711298398
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -33763,6 +33773,8 @@ MonoBehaviour:
   clips:
   - {fileID: 8300000, guid: ec9ac4e2063229349a1ead829e93cd40, type: 3}
   id: 3
+  puzzle_to_be_solved: 3
+  DragandDropPuzzleCanvas: {fileID: 0}
 --- !u!114 &740813623
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -50502,6 +50514,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be4b12e90c06914bbe11b7ef14b1dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAttracted: 0
+  highlighter: {fileID: 0}
+  normalMass: 250
+  gravityGunMass: 5
 --- !u!50 &748635050
 Rigidbody2D:
   serializedVersion: 4
@@ -53719,6 +53735,8 @@ MonoBehaviour:
   radiationLevel: {fileID: 578612028}
   damageAmount: 3
   damagePeriod: 3
+  audioSource: {fileID: 0}
+  splashSound: {fileID: 0}
 --- !u!1001 &1331818928
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -54503,6 +54521,8 @@ MonoBehaviour:
   clips:
   - {fileID: 8300000, guid: ec9ac4e2063229349a1ead829e93cd40, type: 3}
   id: 2
+  puzzle_to_be_solved: 3
+  DragandDropPuzzleCanvas: {fileID: 0}
 --- !u!114 &1428265763
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -55270,10 +55290,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0deba6add2f94894590048ee131ac0ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointA: {fileID: 749189578}
-  pointB: {fileID: 1258475011}
-  speed: 5
-  startFromPointA: 1
+  moveDistance: 3
+  moveSpeed: 2
 --- !u!61 &1481551593
 BoxCollider2D:
   m_ObjectHideFlags: 0
@@ -56160,6 +56178,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be4b12e90c06914bbe11b7ef14b1dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAttracted: 0
+  highlighter: {fileID: 0}
+  normalMass: 250
+  gravityGunMass: 5
 --- !u!50 &1646856091
 Rigidbody2D:
   serializedVersion: 4
@@ -58535,10 +58557,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0deba6add2f94894590048ee131ac0ef, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pointA: {fileID: 1795795983}
-  pointB: {fileID: 2090570312}
-  speed: 5
-  startFromPointA: 1
+  moveDistance: 3
+  moveSpeed: 2
 --- !u!212 &1904085878
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -59089,6 +59109,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7be4b12e90c06914bbe11b7ef14b1dcc, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isAttracted: 0
+  highlighter: {fileID: 0}
+  normalMass: 250
+  gravityGunMass: 5
 --- !u!50 &1968861595
 Rigidbody2D:
   serializedVersion: 4
