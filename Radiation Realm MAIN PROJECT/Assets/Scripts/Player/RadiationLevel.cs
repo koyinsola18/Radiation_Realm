@@ -23,6 +23,8 @@ public class RadiationLevel : MonoBehaviour
     public GameObject HurtCanvas;
     private static RadiationLevel instance;
 
+    public GameObject player;
+
     /*
     private void Awake()
     {
@@ -60,6 +62,7 @@ public class RadiationLevel : MonoBehaviour
             deathManager.Die();
             bar.SetActive(false);
             barText.SetActive(false);
+            player.SetActive(false);
         }
 
 

@@ -15,6 +15,7 @@ public class DragandDrop : MonoBehaviour
     public AudioClip clip;
 
     public GunBuilder builder;
+    public SepticFixer fixer;
 
     Vector2 objectInitPos;
 
@@ -73,6 +74,14 @@ public class DragandDrop : MonoBehaviour
 
     private void ShowCongratulationMessage()
     {
-        builder.PuzzleComplete();
+        if (!fixer)
+        {
+            builder.PuzzleComplete();
+        }
+        else if(!builder)
+        {
+            fixer.PuzzleComplete();
+        }
+
     }
 }
