@@ -10,6 +10,12 @@ public class GunBuilder : MonoBehaviour
     [SerializeField] GunSwitcher gunSwitcher;
 
 
+    public AudioSource audioSource;
+    public AudioClip clip;
+
+    public GameObject gravityGunNotification;
+
+
     private bool isInRange = false;
     bool isPuzzleComplete = false;
 
@@ -41,8 +47,17 @@ public class GunBuilder : MonoBehaviour
     }
     public void PuzzleComplete()
     {
-        gunBuilderDragPuzzle.SetActive(false);
         isPuzzleComplete = true;
         gunSwitcher.AddGunToInventory();
+        gunBuilderDragPuzzle.SetActive(false);
+        audioSource.PlayOneShot(clip);
+        gravityGunNotification.SetActive(true);
+        StartCoroutine(NotificationOff());
+    }
+
+    IEnumerator NotificationOff()
+    {
+        yield return new WaitForSeconds(4f);
+        gravityGunNotification.SetActive(false);
     }
 }

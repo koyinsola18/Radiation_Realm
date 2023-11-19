@@ -11,7 +11,10 @@ public class DragandDrop : MonoBehaviour
     public bool isLocked;
     public bool allPiecesInCorrectPositions = false;
 
-    public SepticFixer fixer;
+    public AudioSource audioSource;
+    public AudioClip clip;
+
+    public GunBuilder builder;
 
     Vector2 objectInitPos;
 
@@ -37,6 +40,7 @@ public class DragandDrop : MonoBehaviour
         {
             isLocked = true;
             objectToDrag.transform.position = ObjectDragToPos.transform.position;
+            audioSource.PlayOneShot(clip);
             CheckPuzzleCompletion();
         }
         else
@@ -69,6 +73,6 @@ public class DragandDrop : MonoBehaviour
 
     private void ShowCongratulationMessage()
     {
-        fixer.PuzzleComplete();
+        builder.PuzzleComplete();
     }
 }
