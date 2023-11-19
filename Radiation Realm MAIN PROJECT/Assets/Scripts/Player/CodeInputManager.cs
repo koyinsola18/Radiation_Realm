@@ -15,6 +15,11 @@ public class CodeInputManager : MonoBehaviour
 
     public GameObject objectToDeactive;
 
+    public AudioSource audioSource;
+    public AudioClip[] clip;
+
+    public AudioSource handlerAudio;
+
     void Start()
     {
         inputText.text = "Enter the 4 Digit Code: ";
@@ -23,6 +28,7 @@ public class CodeInputManager : MonoBehaviour
 
     public void ButtonClick(int number)
     {
+        audioSource.PlayOneShot(clip[0]);
         if (currentInput.Length < correctCode.Length)
         {
             currentInput += number.ToString();
@@ -48,6 +54,7 @@ public class CodeInputManager : MonoBehaviour
         if (currentInput == correctCode)
         {
             // Code is correct, you can add your success logic here
+            handlerAudio.PlayOneShot(clip[1]);
             Debug.Log("Code is correct!");
             //lightHandler.PuzzleComplete();
             gameObject.SetActive(false);

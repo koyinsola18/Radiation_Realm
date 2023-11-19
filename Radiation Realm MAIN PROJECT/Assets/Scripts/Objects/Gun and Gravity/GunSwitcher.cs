@@ -4,6 +4,7 @@ using UnityEngine;
 public class GunSwitcher : MonoBehaviour
 {
     public GameObject ObjectToAdd;
+    public GameObject ObjectToAddUI;
     public GameObject[] guns; // Array to hold your gun GameObjects
     private int currentGunIndex = 0;
 
@@ -44,8 +45,11 @@ public class GunSwitcher : MonoBehaviour
         }
     }
 
+    [ContextMenu("Add Gun To Inventory")]
     public void AddGunToInventory()
     {
+        print("Yay!");
         ObjectToAdd.SetActive(true);
+        ObjectToAddUI.SetActive(true);
     }
 }
