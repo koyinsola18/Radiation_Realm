@@ -11,6 +11,12 @@ public class NumpadHandler : MonoBehaviour
     bool lightTurned = false;
     private bool isInRange = false;
 
+     void Start()
+    {
+        popUp.SetActive(false);
+        numberPuzzle.SetActive(false);
+    }
+
 
     void Update()
     {
@@ -18,6 +24,7 @@ public class NumpadHandler : MonoBehaviour
         {
             numberPuzzle.SetActive(true);
         }
+
     }
 
     void OnTriggerEnter2D(Collider2D other)
@@ -33,6 +40,7 @@ public class NumpadHandler : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            numberPuzzle.SetActive(false);
             popUp.SetActive(false);
             isInRange = false;
         }
