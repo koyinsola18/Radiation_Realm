@@ -16,6 +16,7 @@ public class DragandDrop : MonoBehaviour
 
     public GunBuilder builder;
     public SepticFixer fixer;
+    public LightFixer lightFixer;
 
     Vector2 objectInitPos;
 
@@ -74,13 +75,18 @@ public class DragandDrop : MonoBehaviour
 
     private void ShowCongratulationMessage()
     {
-        if (!fixer)
+        if (!fixer && !lightFixer)
         {
             builder.PuzzleComplete();
         }
-        else if(!builder)
+        else if(!builder && !lightFixer)
         {
             fixer.PuzzleComplete();
+        }
+        else if (!fixer && !builder)
+        {
+            lightFixer.PuzzleComplete();
+
         }
 
     }

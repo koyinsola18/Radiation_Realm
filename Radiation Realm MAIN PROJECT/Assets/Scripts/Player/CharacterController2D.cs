@@ -258,4 +258,9 @@ public class CharacterController2D : MonoBehaviour
             audioSource.PlayOneShot(audioClips[1]);
         }
     }
+
+    public void BootUsage()
+    {
+        canUseBoot = true;
+    }
 }

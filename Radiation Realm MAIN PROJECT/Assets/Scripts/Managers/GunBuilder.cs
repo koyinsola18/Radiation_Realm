@@ -41,6 +41,7 @@ public class GunBuilder : MonoBehaviour
     {
         if (other.tag == "Player")
         {
+            gunBuilderDragPuzzle.SetActive(false);
             popUp.SetActive(false);
             isInRange = false;
         }
