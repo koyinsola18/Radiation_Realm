@@ -18,4 +18,9 @@ public class MainMenuSceneHandler : MonoBehaviour
         loadingScreen.SetActive(true);
         SceneManager.LoadScene(sceneNames[0]);
     }
+
+    public void QuitTheGame()
+    {
+        Application.Quit();
+    }
 }

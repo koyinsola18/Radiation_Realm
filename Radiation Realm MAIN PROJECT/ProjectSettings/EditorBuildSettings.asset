@@ -9,6 +9,15 @@ EditorBuildSettings:
     path: Assets/Scenes/MainMenuScene.unity
     guid: 12829386316c9dd4785060448c374186
   - enabled: 1
+    path: Assets/Scenes/Intro Scene.unity
+    guid: 077e10b3b388ac8469f67e4b53f095cd
+  - enabled: 1
+    path: Assets/Scenes/Crash_site.unity
+    guid: d1fb0c8cf4b42436093031a87bb51832
+  - enabled: 1
+    path: Assets/Scenes/Sewer.unity
+    guid: 5438bdf911c8c4b8db0862d676f406fc
+  - enabled: 1
     path: Assets/Scenes/Septic_tank.unity
     guid: 2cda990e2423bbf4892e6590ba056729
   - enabled: 0
@@ -18,17 +27,8 @@ EditorBuildSettings:
     path: Assets/Scenes/test.unity
     guid: e09db56ba6b3bc94692ebf37257b78eb
   - enabled: 1
-    path: Assets/Scenes/Intro Scene.unity
-    guid: 077e10b3b388ac8469f67e4b53f095cd
-  - enabled: 1
-    path: Assets/Scenes/Crash_site.unity
-    guid: d1fb0c8cf4b42436093031a87bb51832
-  - enabled: 1
     path: Assets/Scenes/Landfill.unity
     guid: 7976b6847273b46d583333b244cfcf6b
-  - enabled: 1
-    path: Assets/Scenes/Sewer.unity
-    guid: 5438bdf911c8c4b8db0862d676f406fc
   - enabled: 1
     path: Assets/Scenes/BaseScene2.unity
     guid: 53e993ec8eaf277489b02ba7ad0c61e4

@@ -10,8 +10,9 @@ public class DeathManager : MonoBehaviour
     public GameObject deathScreen;
     public TextMeshProUGUI countdownText;
     public float respawnDelay = 5f;
+    public RadiationLevel radiationLevelScript;
 
-    private bool isDead = false;
+    public bool isDead = false;
 
     private void Start()
     {
@@ -51,7 +52,8 @@ public class DeathManager : MonoBehaviour
         // transform.position = startingPosition;
 
         // Deactivate the death screen
-        deathScreen.SetActive(false);
+        radiationLevelScript.ResetRadiation();
         isDead = false;
+        deathScreen.SetActive(false);
     }
 }

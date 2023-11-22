@@ -13,66 +13,69 @@ public class RadiationLevel : MonoBehaviour
 
     public float radiationLevelMultiplier = 2f; // How fast the bar will go up
 
-    float radiationLevel, maxLevel = 100.00f;
+    public float radiationLevel;
+    float maxLevel = 100.00f;
     float lerpSpeed;
 
     public GameObject bar;
     public GameObject barText;
-
 
     public GameObject HurtCanvas;
     private static RadiationLevel instance;
 
     public GameObject player;
 
-    /*
-    private void Awake()
-    {
-        if (instance == null)
-        {
-            instance = this;
-
-            DontDestroyOnLoad(gameObject);
-        }
-        else
-        {
-            Destroy(gameObject);
-        }
-    }
-    */
-
     void Start()
     {
         gameObject.SetActive(true);
-        radiationLevel = 0f;
+        // Load the radiation level from PlayerPrefs
+        radiationLevel = PlayerPrefs.GetFloat("RadiationLevel", 0f);
+        // Check if the loaded radiation level is over maxLevel
+        if (radiationLevel > maxLevel)
+        {
+            // Set radiationLevel to maxLevel or some other appropriate value
+            radiationLevel = maxLevel;
+        }
         HurtCanvas.SetActive(false);
     }
+    public void ResetRadiation()
+    {
+        radiationLevel = 0f;
+    }
+
 
     // Update is called once per frame
     void Update()
     {
         radiationLevelText.text = "Radiation: " + radiationLevel.ToString("F2") + "%";
 
-        if(radiationLevel <= maxLevel)
+        if (radiationLevel < maxLevel)
         {
             radiationLevel += radiationLevelMultiplier * Time.deltaTime;
         }
         else
         {
-            deathManager.Die();
-            bar.SetActive(false);
-            barText.SetActive(false);
-            player.SetActive(false);
+            if (!deathManager.isDead)
+            {
+                deathManager.Die();
+                bar.SetActive(false);
+                barText.SetActive(false);
+                // Do not deactivate the player if you want it to persist across scenes
+                // player.SetActive(false);
+            }
         }
 
-
-        RadiationBar.fillAmount = radiationLevel/ maxLevel;
+        RadiationBar.fillAmount = radiationLevel / maxLevel;
         RadiationBar.fillAmount = Mathf.Lerp(RadiationBar.fillAmount, radiationLevel / maxLevel, lerpSpeed);
 
-        lerpSpeed = 3f* Time.deltaTime;
+        lerpSpeed = 3f * Time.deltaTime;
 
         ColorChanger();
-        
+
+        // Save the radiation level to PlayerPrefs
+        PlayerPrefs.SetFloat("RadiationLevel", radiationLevel);
+        // Save all changes to disk
+        PlayerPrefs.Save();
     }
 
     void ColorChanger()
@@ -83,7 +86,7 @@ public class RadiationLevel : MonoBehaviour
 
     public void RadiationDamage(float damageAmount)
     {
-        if(radiationLevel < 100f)
+        if (radiationLevel < 100f)
         {
             radiationLevel += damageAmount;
             HurtCanvas.SetActive(true);
@@ -96,5 +99,13 @@ public class RadiationLevel : MonoBehaviour
         {
             radiationLevel -= damageAmount;
         }
+    }
+
+    private void OnDestroy()
+    {
+        // Ensure the radiation level is saved when the object is destroyed
+        PlayerPrefs.SetFloat("RadiationLevel", radiationLevel);
+        // Save all changes to disk
+        PlayerPrefs.Save();
     }
 }

@@ -16,6 +16,7 @@ public class CharacterController2D : MonoBehaviour
     public float walkSpeed = 2.5f;
     float movementInput;
     public bool canUseBoot = false;
+    bool isJumping = false;
 
     [Header("Horizontal Movement")]
     public float jumpForce = 10f;       // Jump force
@@ -69,14 +70,21 @@ public class CharacterController2D : MonoBehaviour
         {
             isGravityInverted = !isGravityInverted;
         }
+
+        if (Input.GetButtonDown("Jump"))
+        {
+            isJumping = true;
+        }
+
     }
 
 
     private void FixedUpdate()
     {
-        if (Input.GetButtonDown("Jump") || isWallSliding && Input.GetButtonDown("Jump"))
+        if (isJumping == true)
         {
             Jump();
+            isJumping = false;
         }
 
         // Calculate the mouse position relative to the player
@@ -226,7 +234,7 @@ public class CharacterController2D : MonoBehaviour
 
     void CheckGrounded()
     {
-        if (Physics2D.OverlapCircle(feet.position,0.5f, groundLayer))
+        if (Physics2D.OverlapCircle(feet.position,0.15f, groundLayer))
         {
             isGrounded = true;
             jumpCount = 0;
