@@ -66,7 +66,7 @@ public class CharacterController2D : MonoBehaviour
 
         CheckGrounded();
 
-        if (Input.GetKeyDown(KeyCode.G) && canUseBoot)
+        if (Input.GetKeyDown(KeyCode.G) && canUseBoot && isGrounded)
         {
             isGravityInverted = !isGravityInverted;
         }
@@ -212,9 +212,9 @@ public class CharacterController2D : MonoBehaviour
         {
             if (isGrounded || jumpCount < extraJump)
             {
+                jumpCount++;                
                 rb.velocity = new Vector2(rb.velocity.x, -jumpForce * Time.deltaTime);
                 audioSource.PlayOneShot(jumpSound);
-                jumpCount++;
                 myAnim.SetTrigger("isJumping");
             }
 
@@ -223,8 +223,8 @@ public class CharacterController2D : MonoBehaviour
         {
             if (isGrounded || jumpCount < extraJump)
             {
-                rb.velocity = new Vector2(rb.velocity.x, jumpForce * Time.deltaTime);
                 jumpCount++;
+                rb.velocity = new Vector2(rb.velocity.x, jumpForce * Time.deltaTime);
                 myAnim.SetTrigger("isJumping");
                 audioSource.PlayOneShot(jumpSound);
             }
