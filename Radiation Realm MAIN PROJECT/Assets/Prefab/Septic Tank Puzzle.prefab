@@ -180,7 +180,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8838812952201970004}
-  m_RootOrder: 11
+  m_RootOrder: 12
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -241,7 +241,11 @@ MonoBehaviour:
   Dropdistance: 40
   isLocked: 0
   allPiecesInCorrectPositions: 0
+  audioSource: {fileID: 0}
+  clip: {fileID: 0}
+  builder: {fileID: 0}
   fixer: {fileID: 0}
+  lightFixer: {fileID: 0}
   congratulationText: {fileID: 8838812952561833896}
 --- !u!114 &8838812950973973817
 MonoBehaviour:
@@ -318,7 +322,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8838812952201970004}
-  m_RootOrder: 7
+  m_RootOrder: 8
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -379,7 +383,11 @@ MonoBehaviour:
   Dropdistance: 40
   isLocked: 0
   allPiecesInCorrectPositions: 0
+  audioSource: {fileID: 0}
+  clip: {fileID: 0}
+  builder: {fileID: 0}
   fixer: {fileID: 0}
+  lightFixer: {fileID: 0}
   congratulationText: {fileID: 8838812952561833896}
 --- !u!114 &8838812951004387734
 MonoBehaviour:
@@ -604,7 +612,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8838812952201970004}
-  m_RootOrder: 9
+  m_RootOrder: 10
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -665,7 +673,11 @@ MonoBehaviour:
   Dropdistance: 40
   isLocked: 0
   allPiecesInCorrectPositions: 0
+  audioSource: {fileID: 0}
+  clip: {fileID: 0}
+  builder: {fileID: 0}
   fixer: {fileID: 0}
+  lightFixer: {fileID: 0}
   congratulationText: {fileID: 8838812952561833896}
 --- !u!114 &8838812951372020130
 MonoBehaviour:
@@ -992,7 +1004,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8838812952201970004}
-  m_RootOrder: 6
+  m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1053,7 +1065,11 @@ MonoBehaviour:
   Dropdistance: 40
   isLocked: 0
   allPiecesInCorrectPositions: 0
+  audioSource: {fileID: 0}
+  clip: {fileID: 0}
+  builder: {fileID: 0}
   fixer: {fileID: 0}
+  lightFixer: {fileID: 0}
   congratulationText: {fileID: 8838812952561833896}
 --- !u!114 &8838812952039467228
 MonoBehaviour:
@@ -1133,13 +1149,13 @@ RectTransform:
   - {fileID: 8838812952610740802}
   - {fileID: 8838812951687091984}
   - {fileID: 8838812953029392748}
+  - {fileID: 8838812952435005801}
   - {fileID: 8838812952039467231}
   - {fileID: 8838812951004387735}
   - {fileID: 8838812952485563008}
   - {fileID: 8838812951372020157}
   - {fileID: 8838812953031622526}
   - {fileID: 8838812950973973812}
-  - {fileID: 8838812952435005801}
   - {fileID: 8838812952870323345}
   m_Father: {fileID: 8838812951976640035}
   m_RootOrder: 2
@@ -1216,7 +1232,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8838812952201970004}
-  m_RootOrder: 12
+  m_RootOrder: 6
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1292,7 +1308,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8838812952201970004}
-  m_RootOrder: 8
+  m_RootOrder: 9
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1353,7 +1369,11 @@ MonoBehaviour:
   Dropdistance: 40
   isLocked: 0
   allPiecesInCorrectPositions: 0
+  audioSource: {fileID: 0}
+  clip: {fileID: 0}
+  builder: {fileID: 0}
   fixer: {fileID: 0}
+  lightFixer: {fileID: 0}
   congratulationText: {fileID: 8838812952561833896}
 --- !u!114 &8838812952485563013
 MonoBehaviour:
@@ -1643,7 +1663,11 @@ MonoBehaviour:
   Dropdistance: 40
   isLocked: 0
   allPiecesInCorrectPositions: 0
+  audioSource: {fileID: 0}
+  clip: {fileID: 0}
+  builder: {fileID: 0}
   fixer: {fileID: 0}
+  lightFixer: {fileID: 0}
   congratulationText: {fileID: 8838812952561833896}
 --- !u!114 &8838812952870323344
 MonoBehaviour:
@@ -1794,7 +1818,7 @@ RectTransform:
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children: []
   m_Father: {fileID: 8838812952201970004}
-  m_RootOrder: 10
+  m_RootOrder: 11
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
@@ -1855,7 +1879,11 @@ MonoBehaviour:
   Dropdistance: 40
   isLocked: 0
   allPiecesInCorrectPositions: 0
+  audioSource: {fileID: 0}
+  clip: {fileID: 0}
+  builder: {fileID: 0}
   fixer: {fileID: 0}
+  lightFixer: {fileID: 0}
   congratulationText: {fileID: 8838812952561833896}
 --- !u!114 &8838812953031622525
 MonoBehaviour:
