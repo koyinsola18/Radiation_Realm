@@ -43,7 +43,7 @@ public class DeathManager : MonoBehaviour
         yield return new WaitForSeconds(1f);
 
         // Respawn logic here
-        // You can reload the scene or move the player to the starting position
+        // reloads the scene or move the player to the starting position
 
         // For example, to reload the scene:
         SceneManager.LoadScene(SceneManager.GetActiveScene().name);
