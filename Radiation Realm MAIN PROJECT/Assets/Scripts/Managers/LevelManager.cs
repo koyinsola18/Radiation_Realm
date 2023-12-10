@@ -10,6 +10,7 @@ public class LevelManager : MonoBehaviour
 
     // Public variable to set the scene name in the Unity Inspector
     public string sceneToLoad;
+    public SceneFader sceneFader;
 
     void Start()
     {
@@ -24,7 +25,8 @@ public class LevelManager : MonoBehaviour
             loadingScreen.SetActive(true);
 
             // Call the LoadScene method with the specified scene name
-            LoadScene(sceneToLoad);
+            sceneFader.FadeToScene(sceneToLoad);
+            //LoadScene(sceneToLoad);
         }
     }
 
