@@ -98,7 +98,7 @@ LightmapSettings:
     m_TrainingDataDestination: TrainingData
     m_LightProbeSampleCountMultiplier: 4
   m_LightingDataAsset: {fileID: 0}
-  m_UseShadowmask: 1
+  m_UseShadowmask: 0
 --- !u!196 &4
 NavMeshSettings:
   serializedVersion: 2
@@ -1718,21 +1718,19 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "\nTHE BASE...\n\n\n\n\n\n\n\n\n\nAs I stand among the fragments \n\nof
-    a world remaining behind me, \n\nI make this solemn vow: that the \n\nlessons
-    learned in the trial of survival \n\nwill not be forgotten. From this day forward,
-    \n\nI pledge to safeguard the base, not just \n\nas a shelter but as evidence
-    of the \n\nconsequences of my actions and the \n\nimportance of unity in the
-    times of vulnerability. \n\nThis base will stand as a bastion and a beacon \n\nof
-    wisdom for generations to come. My story, \n\nwith all its struggles and failures,
-    shall echo \n\nas a warning of the destructive forces that lie \n\nwithin ourselves
-    as a civilization.\r\n\r\nIn this harsh new world, where every resource \n\nis
-    precious and every decision carries weight, \n\nI promise to tread with the awareness
-    that our \n\nactions shape the course of history. May the \n\nstrength we find
-    in unity guide us toward a \n\nfuture where humanity builds not just structures\n\nbut
-    values that hold us strong. \r\n\r\nThe journey has only just begun, and \n\nwith
-    this promise, I embrace the responsibility\n\nthat survival has bestowed upon
-    me."
+  m_text: "\r\nTHE BASE...\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\n\r\nWith your help
+    Watney was able to survive.\r\n\r\nBut not everyone was that lucky, \r\n\r\nHe
+    makes a solemn vow: that the \r\n\r\nlessons learned in the trial of survival
+    \r\n\r\nwill not be forgotten. From this day forward, \r\n\r\nhe pledges to safeguard
+    the base, not just \r\n\r\nas a shelter but as evidence of the \r\n\r\nconsequences
+    of his actions and the \r\n\r\nimportance of unity in the times of vulnerability.
+    \r\n\r\nHis story, \r\n\r\nwith all its struggles and failures, serves\r\n\r\nas
+    a warning of the destructive forces that lie \r\n\r\nwithin ourselves as a civilization.\r\n\r\nIn
+    this harsh new world, where every resource \r\n\r\nis precious and every decision
+    carries weight, \r\n\r\nttread with the awareness that our \r\n\r\nactions shape
+    the course of history. May the \r\n\r\nstrength we find in unity guide us toward
+    a \r\n\r\nfuture where humanity builds not just structures\r\n\r\nbut values
+    that hold us strong. \r\n\r\n"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 1f36d96edafbd284da4c4e50203764c7, type: 2}
   m_sharedMaterial: {fileID: 1172384736311435853, guid: 1f36d96edafbd284da4c4e50203764c7,
